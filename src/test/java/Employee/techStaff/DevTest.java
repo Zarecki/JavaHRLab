@@ -30,6 +30,12 @@ public class DevTest {
     }
 
     @Test
+    public void checkCannotRaise() {
+        dev.raiseSalary(-5.1);
+        assertEquals(25000.00, dev.getSalary(), 0.01);
+    }
+
+    @Test
     public void checkRaise() {
         dev.raiseSalary(5.1);
         assertEquals(26275.00, dev.getSalary(), 0.01);
@@ -44,6 +50,24 @@ public class DevTest {
     public void canPayBonus() {
         dev.payBonus();
         assertEquals(25250.00, dev.getSalary(), 0.01);
+    }
+
+    @Test
+    public void canChangeName(){
+        dev.changeName("Ben Benson");
+        assertEquals("Ben Benson", dev.getName());
+    }
+
+    @Test
+    public void cannotChangeName(){
+        dev.changeName(null);
+        assertEquals("Bob Bobsson", dev.getName());
+    }
+
+    @Test
+    public void cannyChangeName(){
+        dev.changeName("");
+        assertEquals("Bob Bobsson", dev.getName());
     }
 
 }
