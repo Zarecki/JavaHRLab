@@ -25,11 +25,11 @@ public abstract class Employee {
     }
 
     public void raiseSalary(double percentage){
-        this.salary *= percentage;
+        this.salary = (this.salary + this.salary * (percentage / 100));
     }
 
     public void payBonus(){
-        this.salary *= .01;
+        this.salary = (this.salary + (this.salary * .01));
     }
 
     public double checkBonus(){
